@@ -8,19 +8,19 @@ interface VaultTableProps {
 
 export function VaultTable({ vaultAddresses }: VaultTableProps) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-gray-200 bg-white">
+    <div className="card-institutional overflow-x-auto">
       <table className="w-full">
         <thead>
-          <tr className="border-b border-gray-100 text-left text-xs font-medium uppercase tracking-wider text-gray-400">
-            <th className="px-6 py-3">Vault</th>
-            <th className="px-6 py-3">TVL</th>
-            <th className="px-6 py-3">Curator</th>
-            <th className="px-6 py-3">Exposure</th>
-            <th className="px-6 py-3 text-center">Policies</th>
-            <th className="px-6 py-3 text-right">Target APY</th>
+          <tr style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+            <th className="section-label px-6 py-3 text-left">Vault</th>
+            <th className="section-label px-6 py-3 text-left">TVL</th>
+            <th className="section-label px-6 py-3 text-left">Curator</th>
+            <th className="section-label px-6 py-3 text-left">Exposure</th>
+            <th className="section-label px-6 py-3 text-center">Policies</th>
+            <th className="section-label px-6 py-3 text-right">Target APY</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-50">
+        <tbody>
           {vaultAddresses.map((address) => (
             <VaultRow key={address} vaultAddress={address} />
           ))}
