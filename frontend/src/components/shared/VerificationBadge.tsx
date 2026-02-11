@@ -12,11 +12,16 @@ export function VerificationBadge({ type, size = 'sm' }: VerificationBadgeProps)
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full border ${config.bgColor} ${config.borderColor} ${config.color} ${
-        size === 'sm' ? 'px-2 py-0.5 text-xs' : 'px-2.5 py-1 text-sm'
-      } font-medium`}
+      className="badge-institutional inline-flex items-center gap-1.5"
+      style={{
+        fontSize: size === 'sm' ? '12px' : '13px',
+        padding: size === 'sm' ? '3px 10px' : '5px 14px',
+      }}
     >
-      <span className={`h-1.5 w-1.5 rounded-full ${config.dotColor}`} />
+      <span
+        className="inline-block h-1.5 w-1.5 rounded-full"
+        style={{ background: config.dotColor?.includes('emerald') ? '#059669' : config.dotColor?.includes('amber') ? '#D97706' : config.dotColor?.includes('blue') ? '#1B3A6B' : 'var(--accent-navy)' }}
+      />
       {config.label}
     </span>
   );

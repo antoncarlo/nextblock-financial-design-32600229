@@ -22,9 +22,7 @@ export function StatusBadge({ status, claimed, expired }: StatusBadgeProps) {
   const config = STATUS_CONFIG[effectiveStatus] ?? STATUS_CONFIG[PolicyStatus.REGISTERED];
 
   return (
-    <span
-      className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${config.bgColor} ${config.color}`}
-    >
+    <span className="badge-institutional">
       {config.label}
     </span>
   );

@@ -13,24 +13,23 @@ export function YieldTicker({ totalAssets, totalSupply }: YieldTickerProps) {
   const isPositive = pnlPct >= 0;
 
   return (
-    <div className="rounded-lg border border-gray-100 bg-white p-4">
+    <div className="card-institutional p-5">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-xs font-medium uppercase tracking-wider text-gray-400">
+          <p className="section-label">
             NAV per Share
           </p>
-          <p className="font-mono-num mt-1 text-2xl font-bold text-gray-900">
+          <p className="stat-number mt-1 text-3xl">
             ${sharePrice.toFixed(4)}
           </p>
         </div>
         <div className="text-right">
-          <p className="text-xs font-medium uppercase tracking-wider text-gray-400">
+          <p className="section-label">
             P&L
           </p>
           <p
-            className={`font-mono-num mt-1 text-lg font-semibold ${
-              isPositive ? 'text-emerald-600' : 'text-red-600'
-            }`}
+            className="font-mono-num mt-1 text-xl font-semibold"
+            style={{ color: isPositive ? '#059669' : '#DC2626' }}
           >
             {isPositive ? '+' : ''}
             {pnlPct.toFixed(2)}%
@@ -39,9 +38,9 @@ export function YieldTicker({ totalAssets, totalSupply }: YieldTickerProps) {
       </div>
 
       {/* TVL */}
-      <div className="mt-3 flex items-center justify-between border-t border-gray-50 pt-3">
-        <span className="text-xs text-gray-400">Total Value Locked</span>
-        <span className="font-mono-num text-sm font-medium text-gray-700">
+      <div className="mt-4 flex items-center justify-between pt-4" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+        <span className="section-label">Total Value Locked</span>
+        <span className="stat-number text-base">
           {formatUSDC(totalAssets)}
         </span>
       </div>

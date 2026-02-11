@@ -1,20 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap');
+
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  /* NextBlock Institutional Finance Design System */
+  --bg-primary: #FAFAF8;
+  --bg-secondary: #F2F1EE;
+  --bg-card: #FFFFFF;
+  --bg-footer: #0F1218;
+
+  --text-heading: #0F1218;
+  --text-body: #4A4A4A;
+  --text-muted: #8A8A8A;
+  --text-label: #9A9A9A;
+
+  --accent-navy: #1B3A6B;
+  --accent-navy-hover: #0F2847;
+
+  --background: var(--bg-primary);
+  --foreground: var(--text-heading);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-navy: var(--accent-navy);
+  --color-navy-hover: var(--accent-navy-hover);
+  --color-card: var(--bg-card);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-body: var(--text-body);
+  --color-text-muted: var(--text-muted);
+  --color-text-label: var(--text-label);
+  --color-text-heading: var(--text-heading);
+  --color-footer: var(--bg-footer);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-body);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--text-heading);
+}
+
+/* Logo */
+.logo-text {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Section labels */
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-label);
+}
+
+/* Stat numbers */
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  color: var(--accent-navy);
 }
 
 /* Monospace for numbers */
@@ -22,4 +79,66 @@ body {
   font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'Consolas',
     'Liberation Mono', 'Menlo', monospace;
   font-variant-numeric: tabular-nums;
+}
+
+/* Card institutional */
+.card-institutional {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card-institutional:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Badge institutional */
+.badge-institutional {
+  background: rgba(27, 58, 107, 0.08);
+  border: 1px solid rgba(27, 58, 107, 0.2);
+  color: var(--accent-navy);
+  border-radius: 50px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Nav pill */
+.nav-pill {
+  border-radius: 50px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--accent-navy);
+  color: #FFFFFF;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+.btn-primary:hover {
+  background: var(--accent-navy-hover);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: var(--text-heading);
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+.btn-secondary:hover {
+  border-color: rgba(0, 0, 0, 0.3);
 }
