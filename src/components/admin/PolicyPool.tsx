@@ -1,4 +1,4 @@
-'use client';
+
 
 import { usePolicyCount, useAllPolicies } from '@/hooks/usePolicyRegistry';
 import { useCurrentTime } from '@/hooks/usePolicyRegistry';

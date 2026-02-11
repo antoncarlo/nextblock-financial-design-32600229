@@ -1,4 +1,4 @@
-'use client';
+
 
 import { useCurrentTime, useTimeOffset } from '@/hooks/usePolicyRegistry';
 import { useAdvanceTime } from '@/hooks/useTimeControls';
