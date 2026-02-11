@@ -22,10 +22,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl" style={{ background: 'rgba(250, 250, 248, 0.85)', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
-      <div className="mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8" style={{ maxWidth: '1400px' }}>
+      <div className="mx-auto flex h-40 items-center justify-between px-4 sm:px-6 lg:px-8" style={{ maxWidth: '1400px' }}>
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logoBlack} alt="NextBlock logo" className="h-8" />
+            <img src={logoBlack} alt="NextBlock logo" className="h-32" />
           </Link>
 
           <nav className="hidden items-center gap-1 sm:flex">

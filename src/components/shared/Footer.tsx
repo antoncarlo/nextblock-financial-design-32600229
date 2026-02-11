@@ -2,7 +2,7 @@ import footerFrieze from '@/assets/footer-frieze.png';
 
 export function Footer() {
   return (
-    <footer style={{ background: 'var(--bg-footer)' }}>
+    <footer style={{ background: '#FFFFFF' }}>
       <div className="w-full overflow-hidden">
         <img
           src={footerFrieze}
