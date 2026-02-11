@@ -25,7 +25,7 @@ export function Header() {
       <div className="mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8" style={{ maxWidth: '1400px' }}>
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logoBlack} alt="NextBlock logo" className="h-8" />
+            <img src={logoBlack} alt="NextBlock logo" className="h-32" />
           </Link>
 
           <nav className="hidden items-center gap-1 sm:flex">
