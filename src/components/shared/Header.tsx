@@ -3,6 +3,7 @@ import { useAccount } from 'wagmi';
 import { WalletButton } from './WalletButton';
 import { WalletRoleIndicator } from './WalletRoleIndicator';
 import { useAdminAddress } from '@/hooks/useAdminAddress';
+import logoBlack from '@/assets/logo-black.svg';
 
 export function Header() {
   const { address, isConnected } = useAccount();
@@ -24,12 +25,7 @@ export function Header() {
       <div className="mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8" style={{ maxWidth: '1400px' }}>
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg" style={{ background: 'var(--accent-navy)' }}>
-              <span className="text-sm font-bold text-white">NB</span>
-            </div>
-            <span className="logo-text text-lg" style={{ color: 'var(--text-heading)' }}>
-              NextBlock
-            </span>
+            <img src={logoBlack} alt="NextBlock logo" className="h-8" />
           </Link>
 
           <nav className="hidden items-center gap-1 sm:flex">
