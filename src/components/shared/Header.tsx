@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useAccount } from 'wagmi';
 import { WalletButton } from './WalletButton';
 import { WalletRoleIndicator } from './WalletRoleIndicator';
@@ -7,9 +7,17 @@ import { useAdminAddress } from '@/hooks/useAdminAddress';
 export function Header() {
   const { address, isConnected } = useAccount();
   const adminAddress = useAdminAddress();
+  const location = useLocation();
   const isAdmin =
     isConnected &&
     address?.toLowerCase() === adminAddress.toLowerCase();
+
+  const linkClass = (path: string) => {
+    const active = path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
+    return `rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
+      active ? 'bg-black/8 font-semibold' : 'hover:bg-black/5'
+    }`;
+  };
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl" style={{ background: 'rgba(250, 250, 248, 0.85)', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
@@ -28,7 +36,7 @@ export function Header() {
             <div className="nav-pill flex items-center gap-1 px-1 py-1">
               <Link
                 to="/"
-                className="rounded-full px-4 py-1.5 text-sm font-medium transition-colors hover:bg-black/5"
+                className={linkClass('/')}
                 style={{ color: 'var(--text-body)' }}
               >
                 Vaults
@@ -36,7 +44,7 @@ export function Header() {
               {isAdmin && (
                 <Link
                   to="/admin"
-                  className="rounded-full px-4 py-1.5 text-sm font-medium transition-colors hover:bg-black/5"
+                  className={linkClass('/admin')}
                   style={{ color: 'var(--text-body)' }}
                 >
                   Admin
