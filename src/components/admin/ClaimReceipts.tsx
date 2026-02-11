@@ -1,4 +1,4 @@
-'use client';
+
 
 import { useReceiptCount, useAllReceipts } from '@/hooks/useClaimReceipts';
 import { useExerciseClaim } from '@/hooks/useClaimTrigger';

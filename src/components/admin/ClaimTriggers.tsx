@@ -1,4 +1,4 @@
-'use client';
+
 
 import { useState } from 'react';
 import { useCheckClaim, useReportEvent, useSubmitClaim } from '@/hooks/useClaimTrigger';
